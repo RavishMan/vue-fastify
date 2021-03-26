@@ -1,23 +1,24 @@
 # fastify-vue
 
-## Project setup
+## Установка проекта
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Включить фронт для разработки
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Билд проекта (не нужно сейчас)
 ```
 npm run build
 ```
 
-### Lints and fixes files
+
+### Запустить сервер 
 ```
-npm run lint
+node index.js
 ```
 
 ### Customize configuration

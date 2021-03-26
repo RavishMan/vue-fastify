@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{ mainText }}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name:       'App',
+  components: {},
+  data() {
+    return {
+      mainText: '',
+    };
+  },
+  methods: {
+    async loadFastifyData() {
+      let result = await this.axios.get('http://127.0.0.1:3050/hello');
+      this.mainText = result.data.hello;
+    },
+  },
+  mounted() {
+    this.loadFastifyData()
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family:             Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing:  antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  text-align:              center;
+  color:                   #2c3e50;
+  margin-top:              60px;
 }
 </style>
